@@ -35,26 +35,24 @@ class Poesy
     }
 
     /**
-     * @return VerseInterface[]|iterable
-     */
-    public function getVerses(): iterable
-    {
-        for ($noChocolates = $this->boxSize; $noChocolates > 0; $noChocolates--) {
-            yield new ChocolatesAwareBoxVerse($noChocolates);
-        }
-
-        yield new EmptyBoxVerse($this->boxSize);
-    }
-
-    /**
      * Returns the text of the poesy.
      *
      * @return string
      */
     public function __toString(): string
     {
-        $verses = $this->getVerses();
+        return implode("\n", iterator_to_array($this->getVerses()));
+    }
 
-        return implode("\n", is_array($verses) ? $verses : iterator_to_array($verses));
+    /**
+     * @return VerseInterface[]|\Generator
+     */
+    private function getVerses(): \Generator
+    {
+        for ($noChocolates = $this->boxSize; $noChocolates > 0; $noChocolates--) {
+            yield new ChocolatesAwareBoxVerse($noChocolates);
+        }
+
+        yield new EmptyBoxVerse($this->boxSize);
     }
 }
