@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+    php:
+        build:
+            context: ./docker/php
+        restart: on-failure
+        volumes: ["./:/var/www/chocolate"]
+        environment:
+            PHP_IDE_CONFIG: ${PHP_IDE_CONFIG}
