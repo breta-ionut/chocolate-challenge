@@ -7,10 +7,10 @@ namespace App\Poesy\Verse;
 class EmptyBoxVerse implements VerseInterface
 {
     private const ONE_CHOCOLATE_BOX_VERSE = 'No more chocolate bar in the box, no more chocolate bar.'."\n"
-        .'Go to the store and buy another box, 1 chocolate bar in the box.';
+        .'Go to the store and buy another box, 1 chocolate bar in the box.'."\n";
 
     private const MULTIPLE_CHOCOLATES_BOX_VERSE = 'No more chocolate bar in the box, no more chocolate bar.'."\n"
-        .'Go to the store and buy another box, %d chocolate bars in the box.';
+        .'Go to the store and buy another box, %d chocolate bars in the box.'."\n";
 
     /**
      * The initial number of chocolates in the box.

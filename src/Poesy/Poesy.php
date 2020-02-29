@@ -55,6 +55,6 @@ class Poesy
     {
         $verses = $this->getVerses();
 
-        return implode("\n\n", is_array($verses) ? $verses : iterator_to_array($verses));
+        return implode("\n", is_array($verses) ? $verses : iterator_to_array($verses));
     }
 }
