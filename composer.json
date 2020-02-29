@@ -1,0 +1,20 @@
+{
+    "name": "ionutbreta/chocolate-challenge",
+    "description": "The PitechPlus Chocolate Challenge 2020.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ionut Breta",
+            "email": "ionut.breta@pitechnologies.ro"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/console": "^5.0"
+    }
+}
