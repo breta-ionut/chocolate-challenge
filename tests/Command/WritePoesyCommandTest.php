@@ -24,10 +24,12 @@ class WritePoesyCommandTest extends TestCase
     }
 
     /**
-     * @param int|null $boxSizeArgument
+     * @dataProvider executeDataProvider
+     *
+     * @param string|null $boxSizeArgument
      * @param int $expectedExitCode
      */
-    public function testExecute(?int $boxSizeArgument, int $expectedExitCode): void
+    public function testExecute(?string $boxSizeArgument, int $expectedExitCode): void
     {
         $input = [];
         if (null !== $boxSizeArgument) {
@@ -43,13 +45,13 @@ class WritePoesyCommandTest extends TestCase
     public function executeDataProvider(): array
     {
         return [
-            [-55, 1],
-            [-1, 1],
-            [0, 1],
-            [1, 0],
-            [2, 0],
-            [3, 0],
-            [5, 0],
+            ['-55', 1],
+            ['-1', 1],
+            ['0', 1],
+            ['1', 0],
+            ['2', 0],
+            ['3', 0],
+            ['5', 0],
             [null, 0],
         ];
     }

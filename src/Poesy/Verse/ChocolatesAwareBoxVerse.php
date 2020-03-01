@@ -8,13 +8,13 @@ class ChocolatesAwareBoxVerse implements VerseInterface
 {
     private const VERSES_BY_NO_CHOCOLATES = [
         2 => '2 pieces of chocolate bars in the box, 2 chocolate bars.'."\n"
-            .'Take out one of the box, pass it around, 1 chocolate bar in the box.'."\n",
+            .'Take one out of the box, pass it around, 1 chocolate bar in the box.'."\n",
         1 => 'One chocolate bar in the box, one chocolate bar.'."\n"
             .'Take one out of the box, pass it around, no more chocolate bar in the box.'."\n",
     ];
 
     private const VERSE_PATTERN = '%1$d pieces of chocolate bars in the box, %1$d chocolate bars.'."\n"
-        .'Take out one of the box, pass it around, %2$d chocolate bars in the box.'."\n";
+        .'Take one out of the box, pass it around, %2$d chocolate bars in the box.'."\n";
 
     /**
      * The number of chocolates in the box.

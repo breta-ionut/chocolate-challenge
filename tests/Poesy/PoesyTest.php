@@ -11,19 +11,6 @@ use PHPUnit\Framework\TestCase;
 class PoesyTest extends TestCase
 {
     /**
-     * @var array
-     */
-    private array $poesiesData;
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function setUp(): void
-    {
-        $this->poesiesData = include __DIR__.'/../Fixtures/poesies.php';
-    }
-
-    /**
      * @dataProvider invalidBoxSizeDataProvider
      *
      * @param int $boxSize
@@ -64,6 +51,6 @@ class PoesyTest extends TestCase
      */
     public function poesyTextDataProvider(): array
     {
-        return $this->poesiesData;
+        return include __DIR__.'/../Fixtures/poesies.php';
     }
 }

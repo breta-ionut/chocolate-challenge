@@ -35,10 +35,10 @@ class WritePoesyCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        try {
-            $poesy = new Poesy((int) $input->getArgument('boxSize'));
+        $boxSize = null !== $input->getArgument('boxSize') ? (int) $input->getArgument('boxSize') : null;
 
-            $output->write((string) $poesy);
+        try {
+            $output->write((string) new Poesy($boxSize));
         } catch (\Throwable $exception) {
             (new SymfonyStyle($input, $output))
                 ->error(sprintf('An error occurred while writing the poesy: %s', $exception->getMessage()));
